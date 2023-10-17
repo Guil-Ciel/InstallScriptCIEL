@@ -92,7 +92,7 @@ fi
 
 echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
 sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
-
+sudo su - postgres -c "psql -c \"CREATE ROLE $OE_USER WITH SUPERUSER CREATEDB CREATEROLE LOGIN\"" 2> /dev/null || true
 #--------------------------------------------------
 # Install Dependencies
 #--------------------------------------------------
