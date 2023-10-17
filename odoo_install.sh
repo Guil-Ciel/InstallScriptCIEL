@@ -89,10 +89,12 @@ else
     sudo apt-get install postgresql postgresql-server-dev-all -y
 fi
 
+echo -e "\n---- Creating the ODOO PostgreSQL Role  ----"
+sudo su - postgres -c "psql -c \"CREATE ROLE $OE_USER WITH SUPERUSER CREATEDB CREATEROLE LOGIN\"" 2> /dev/null || true
+echo -e "\n---- Created the ODOO PostgreSQL Role  ----"
 
 echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
 sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
-sudo su - postgres -c "psql -c \"CREATE ROLE $OE_USER WITH SUPERUSER CREATEDB CREATEROLE LOGIN\"" 2> /dev/null || true
 #--------------------------------------------------
 # Install Dependencies
 #--------------------------------------------------
