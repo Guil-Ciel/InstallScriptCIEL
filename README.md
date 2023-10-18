@@ -9,15 +9,14 @@ Se você definir o parâmetro ```INSTALL_NGINX``` como ```True```, você também
 
 ##### 1. Baixe a pasta do script:
 ```
-  Já dentro da sua VM/Cloud/Terminal, copie e de enter:
+Já dentro da sua VM/Cloud/Terminal, copie e de enter:
 git clone https://github.com/guilbezerra/InstallScriptCIEL.git
 ```
 
 ##### 2. Permissão de execução:
 ```
-  Comece dando a permissão de execução para os dois scripts que iremos usar:
+Comece dando a permissão de execução para os dois scripts que iremos usar:
 sudo chmod +x odoo_install.sh
-sudo chmod +x create_role.sh
 ```
 ##### 2. Modifique os parâmetros:
   Existem algumas configurações que podemos mudar, segue a lista: :<br/>
@@ -35,14 +34,47 @@ sudo chmod +x create_role.sh
 ```INSTALL_NGINX``` e ´´´ENABLE_SSL´´´ devem ser definidos como True e o espaço reservado em ´´´ADMIN_EMAIL´´´ deve ser substituído por um endereço de e-mail válido para a instalação do certbot.<br/>
   _Ao ativar o SSL por meio do Let's Encrypt, você concorda com as seguintes políticas <br/>
 
-#### 3. Make the script executable
-```
-sudo chmod +x odoo_install.sh
-```
-##### 4. Execute the script:
+#### 3. Execute o script
 ```
 sudo ./odoo_install.sh
+Aguarde até o final, pressionando enter e digitando "Y" sempre que o script for pedindo. ao finalizar, você deve receber uma mensagem no terminal assim:
+Done! The Odoo server is up and running. Specifications:
+Port: ```OE_PORT```
+User service: ```OE_USER```
+Configuraton file location: /etc/odoo-server.conf
+Logfile location: /var/log/odoo
+User PostgreSQL: ```OE_USER```
+Code location: ```OE_USER```
+Addons folder: ```OE_USER```/odoo-server/addons/
+Password superadmin (database): "Sua senha colocada nos parâmetros" / Uma senha aleatória, exemplo: J4EzGDdGYvq8Eddz
+Start Odoo service: sudo service odoo-server start
+Stop Odoo service: sudo service odoo-server stop
+Restart Odoo service: sudo service odoo-server restart
 ```
+##### 4. Inicie os serviços:
+```
+Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```odoo-server``` e ```postgresql```, digite:
+sudo service odoo-server start
+sudo service postgresql start
+
+Entretanto, caso esteja fazendo esse processo em uma máquina linux, o comando pode alterar para systemctl, sendo assim:
+sudo systemctl odoo-server start
+sudo systemctl postgresql start
+```
+
+Iniciando o serviços, seu odoo já estará rodando local/cloud e pode ser acessado por localhost:8069 ou "Seu ip do cloud":8069 (possivelmente o Cloud pode ter problemas com a porta, precisando ser liberada no firewall do mesmo)
+
+##### 5. Troubleshoot:
+
+Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais comuns entre eles são:
+
+### 1 - Database creation error: Access Denied
+  Se  você está recebendo essa mensagem, a senha do ```OE_SUPERADMIN``` não foi definida, precisando ser alterada seguindo o seguinte caminho:
+  cd /etc/
+  E alterando o seguinte arquivo:
+  nano odoo-server.conf
+  Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para sair.
+
 
 ## Where should I host Odoo?
 There are plenty of great services that offer good hosting. The script has been tested with a few major players such as [Google Cloud](https://cloud.google.com/), [Hetzner](https://www.hetzner.com/), [Amazon AWS](https://aws.amazon.com/) and [DigitalOcean](https://www.digitalocean.com/products/droplets/).
