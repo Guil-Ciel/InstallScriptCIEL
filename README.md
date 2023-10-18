@@ -16,9 +16,12 @@ git clone https://github.com/guilbezerra/InstallScriptCIEL.git
 
 ### 2. Permissão de execução:
 
-Comece dando a permissão de execução para os dois scripts que iremos usar:
+Comece dando a permissão de execução para o script principal e mais um que posteriormente podemos vir a usar:
 ```
 sudo chmod +x odoo_install.sh
+```
+```
+sudo chmod +x create_role.sh
 ```
 ### 3. Modifique os parâmetros:
   Existem algumas configurações que podemos mudar, segue a lista: :<br/>
@@ -87,11 +90,63 @@ Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais 
   cd /etc/
 ```
   E alterando o seguinte arquivo:
-  ```
-  nano odoo-server.conf
+  
 ```
-  Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para sair.
+nano odoo-server.conf
+```
+  Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para sair. Reinicie o serviço odoo e sua nova senha deve estar funcionando. LEMBRANDO: certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"
+```
+sudo service odoo-server restart
+```
+ou
+```
+sudo systemctl odoo-server restart
+```
+  
 
+ #### 2 - Database creation error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory Is the server running locally and accepting connections on that socket?
+
+Este erro está ligado ao PostgreSQL não estar executado, certifique-se de ter digitado:
+```
+sudo service postgresql start
+```
+Ou
+```
+sudo service postgresql restart
+```
+Caso esteja usando systemctl:
+```
+sudo systemctl postgresql start
+```
+Ou
+```
+sudo systemctl postgresql restart
+```
+
+ #### 3 - Database creation error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL: role "odoo" does not exist
+
+Este erro ocorre quando o script não criar a uma Role no PostgreSQL necessaria para o odoo funcionar, para isso, devemos executar o script ./create_role.sh que tornamos executavel no passo #2. Para corrigir, vá até a pasta inicial com:
+ ```
+cd /home/"Seu usuario"/InstallScriptCIEL/
+```
+execute o script com:
+
+ ```
+sudo ./create_role.sh
+```
+Se o arquivo for executado corretamente, ele deve exibir a mensagem:
+
+"Insira a linha "User service" para criar a role do PostgreSQL:"
+
+Precisamos assim digitar o mesmo valor que estiver no "User service" da mensagem de sucesso no passo #4, o que significa que o valor será o mesmo do ```OE_USER``` citado no passo #3 dos parâmetros. Dando enter ele retorna a mensagem:
+
+"CREATE ROLE"
+
+Tendo assim criado a role com sucesso, podemos dar restart 
+
+
+ 
+ 
 
 ## Where should I host Odoo?
 There are plenty of great services that offer good hosting. The script has been tested with a few major players such as [Google Cloud](https://cloud.google.com/), [Hetzner](https://www.hetzner.com/), [Amazon AWS](https://aws.amazon.com/) and [DigitalOcean](https://www.digitalocean.com/products/droplets/).
