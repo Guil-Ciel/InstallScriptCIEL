@@ -99,7 +99,7 @@ nano odoo-server.conf
 ```
 sudo service odoo-server restart
 ```
-ou
+Caso esteja usando systemctl:
 ```
 sudo systemctl odoo-server restart
 ```
@@ -113,22 +113,15 @@ Este erro está ligado ao PostgreSQL não estar executado, certifique-se de ter 
 ```
 sudo service postgresql start
 ```
-Ou
-```
-sudo service postgresql restart
-```
 Caso esteja usando systemctl:
 ```
 sudo systemctl postgresql start
 ```
-Ou
-```
-sudo systemctl postgresql restart
-```
+
 
  #### 3 - Database creation error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL: role "odoo" does not exist
 
-Este erro ocorre quando o script não criar a uma Role no PostgreSQL necessaria para o odoo funcionar, para isso, devemos executar o script ./create_role.sh que tornamos executavel no passo #2. Para corrigir, vá até a pasta inicial com:
+Este erro ocorre quando o script não cria uma Role no PostgreSQL necessária para o Odoo funcionar, para isso, devemos executar o script ./create_role.sh que tornamos executável no passo #2. Para corrigir, vá até a pasta inicial com:
  ```
 cd /home/"Seu usuario"/InstallScriptCIEL/
 ```
@@ -141,15 +134,22 @@ Se o arquivo for executado corretamente, ele deve exibir a mensagem:
 
 "Insira a linha "User service" para criar a role do PostgreSQL:"
 
-Precisamos assim digitar o mesmo valor que estiver no "User service" da mensagem de sucesso no passo #4, o que significa que o valor será o mesmo do ```OE_USER``` citado no passo #3 dos parâmetros. Dando enter ele retorna a mensagem:
+"Precisamos, assim, digitar o mesmo valor que estiver no 'User service' da mensagem de sucesso no passo #4, o que significa que o valor será o mesmo do ```OE_USER``` citado no passo #3 dos parâmetros. Dando 'enter', ele retorna a mensagem:"
 
 "CREATE ROLE"
 
-Tendo assim criado a role com sucesso, podemos dar restart 
+Tendo assim criado a role com sucesso, podemos dar restart em ambos os serviços.
 
+```
+sudo service odoo-server restart
+sudo service postgresql restart
+```
+Caso esteja usando systemctl:
+```
+udo systemctl odoo-server restart
+sudo systemctl postgresql restart
+```
 
- 
- 
 
 ## Where should I host Odoo?
 There are plenty of great services that offer good hosting. The script has been tested with a few major players such as [Google Cloud](https://cloud.google.com/), [Hetzner](https://www.hetzner.com/), [Amazon AWS](https://aws.amazon.com/) and [DigitalOcean](https://www.digitalocean.com/products/droplets/).
