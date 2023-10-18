@@ -112,11 +112,11 @@ nano OE_USER-server.conf
   Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para fechar. 
   Reinicie o serviço odoo e sua nova senha deve estar funcionando. 
 ```
-sudo service `OE_USER`-server restart
+sudo service`OE_USER-server restart
 ```
 Caso esteja usando systemctl:
 ```
-sudo systemctl `OE_USER`-server restart
+sudo systemctl OE_USER-server restart
 ```
 
 ##### LEMBRANDO: certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"
@@ -178,12 +178,12 @@ Se o arquivo for executado corretamente, ele deve exibir a mensagem:
 Tendo assim criado a role com sucesso, podemos dar restart em ambos os serviços.
 
 ```
-sudo service `OE_USER`-server restart
+sudo service OE_USER-server restart
 sudo service postgresql restart
 ```
 Caso esteja usando systemctl:
 ```
-udo systemctl `OE_USER`-server restart
+udo systemctl OE_USER-server restart
 sudo systemctl postgresql restart
 ```
 
