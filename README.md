@@ -72,8 +72,9 @@ Restart Odoo service: sudo service ```OE_USER```-server restart<br/>
 ### 5. Inicie os serviços:
 
 Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```OE_USER```-server``` e ```postgresql```, digite:
+##### (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão é "odoo")
 ```
-sudo service ```OE_USER```-server start
+sudo service `OE_USER`-server start
 ```
 
 ```
@@ -81,7 +82,7 @@ sudo service postgresql start
 ```
 Entretanto, caso esteja fazendo esse processo em uma máquina linux, o comando pode alterar para systemctl, sendo assim:
 ```
-sudo systemctl ```OE_USER```-server start
+sudo systemctl `OE_USER`-server start
 ```
 ```
 sudo systemctl postgresql start
@@ -103,7 +104,7 @@ sudo -i
   ```
   cd /etc/
 ```
-  E alterando o seguinte arquivo (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão é "odoo"):
+  E alterando o seguinte arquivo:
   
 ```
 nano OE_USER-server.conf
@@ -111,11 +112,11 @@ nano OE_USER-server.conf
   Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para fechar. 
   Reinicie o serviço odoo e sua nova senha deve estar funcionando. 
 ```
-sudo service ```OE_USER```-server restart
+sudo service `OE_USER`-server restart
 ```
 Caso esteja usando systemctl:
 ```
-sudo systemctl ```OE_USER```-server restart
+sudo systemctl `OE_USER`-server restart
 ```
 
 ##### LEMBRANDO: certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"
@@ -177,12 +178,12 @@ Se o arquivo for executado corretamente, ele deve exibir a mensagem:
 Tendo assim criado a role com sucesso, podemos dar restart em ambos os serviços.
 
 ```
-sudo service ```OE_USER```-server restart
+sudo service `OE_USER`-server restart
 sudo service postgresql restart
 ```
 Caso esteja usando systemctl:
 ```
-udo systemctl ```OE_USER```-server restart
+udo systemctl `OE_USER`-server restart
 sudo systemctl postgresql restart
 ```
 
