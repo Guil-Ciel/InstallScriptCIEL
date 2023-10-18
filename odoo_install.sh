@@ -53,8 +53,8 @@ ADMIN_EMAIL="odoo@example.com"
 
 # Check if the operating system is Ubuntu 22.04
 if [[ $(lsb_release -r -s) == "22.04" ]]; then
-    WKHTMLTOX_X64="https://packages.ubuntu.com/jammy/wkhtmltopdf"
-    WKHTMLTOX_X32="https://packages.ubuntu.com/jammy/wkhtmltopdf"
+    WKHTMLTOX_X64="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.$(lsb_release -c -s)_amd64.deb"
+    WKHTMLTOX_X32="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.$(lsb_release -c -s)_i386.deb"
     #No Same link works for both 64 and 32-bit on Ubuntu 22.04
 else
     # For older versions of Ubuntu
