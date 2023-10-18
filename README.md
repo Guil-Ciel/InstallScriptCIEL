@@ -7,20 +7,20 @@ Se você definir o parâmetro ```INSTALL_NGINX``` como ```True```, você também
 
 ## Processos de Instalação
 
-##### 1. Baixe a pasta do script:
+## 1. Baixe a pasta do script:
 
 Já dentro da sua VM/Cloud/Terminal, copie e de enter:
 ```
 git clone https://github.com/guilbezerra/InstallScriptCIEL.git
 ```
 
-##### 2. Permissão de execução:
+## 2. Permissão de execução:
 
 Comece dando a permissão de execução para os dois scripts que iremos usar:
 ```
 sudo chmod +x odoo_install.sh
 ```
-##### 2. Modifique os parâmetros:
+## 3. Modifique os parâmetros:
   Existem algumas configurações que podemos mudar, segue a lista: :<br/>
 ```OE_USER```. Será o nome de usuário para o usuário do sistema.<br/>
 ```GENERATE_RANDOM_PASSWORD```. Se isso estiver definido como True, o script gerará uma senha aleatória; se definido como False, a senha será configurada em ```OE_SUPERADMIN.``` O valor padrão é True, e o script gerará uma senha aleatória e segura.<br/>
@@ -57,7 +57,7 @@ Start Odoo service: sudo service odoo-server start<br/>
 Stop Odoo service: sudo service odoo-server stop<br/>
 Restart Odoo service: sudo service odoo-server restart<br/>
 
-##### 4. Inicie os serviços:
+## 4. Inicie os serviços:
 
 Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```odoo-server``` e ```postgresql```, digite:
 ```
@@ -77,11 +77,11 @@ sudo systemctl postgresql start
 
 Iniciando o serviços, seu odoo já estará rodando local/cloud e pode ser acessado por localhost:8069 ou "Seu ip do cloud":8069 (possivelmente o Cloud pode ter problemas com a porta, precisando ser liberada no firewall do mesmo)
 
-##### 5. Troubleshoot:
+## 5. Troubleshoot:
 
 Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais comuns entre eles são:
 
-### 1 - Database creation error: Access Denied
+#### 1 - Database creation error: Access Denied
   Se  você está recebendo essa mensagem, a senha do ```OE_SUPERADMIN``` não foi definida, precisando ser alterada seguindo o seguinte caminho:
   ```
   cd /etc/
