@@ -101,7 +101,7 @@ Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais 
   E alterando o seguinte arquivo (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão é "odoo"):
   
 ```
-nano ```OE_USER```-server.conf
+nano OE_USER-server.conf
 ```
   Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para fechar. 
   Reinicie o serviço odoo e sua nova senha deve estar funcionando. 
