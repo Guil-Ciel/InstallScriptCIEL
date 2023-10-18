@@ -114,7 +114,8 @@ sudo systemctl odoo-server restart
 
  #### 2 - Database creation error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory Is the server running locally and accepting connections on that socket?
 
-Este erro está ligado ao PostgreSQL não estar executado, certifique-se de ter digitado:
+Este erro está ligado a três possibilidades: 
+##### 2.1 - PostgreSQL não estar executado, certifique-se de ter digitado:
 ```
 sudo service postgresql start
 ```
@@ -122,7 +123,16 @@ Caso esteja usando systemctl:
 ```
 sudo systemctl postgresql start
 ```
-
+##### 2.2 - PostgreSQL está ouvindo na porta errada:
+Para resolver isso, rode o comando:
+```
+sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/14/main/postgresql.conf
+```
+##### 2.3 - PostgreSQL com as configurações de autentificação errada:
+Para corrigir, rode o comando:
+```
+sudo sed -i 's/local   all             all                                     trust/local   all             all                                     testando/' /etc/postgresql/14/main/pg_hba.conf
+```
 
  #### 3 - Database creation error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL: role "odoo" does not exist
 
