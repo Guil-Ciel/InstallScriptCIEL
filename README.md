@@ -83,9 +83,13 @@ Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais 
 
 ### 1 - Database creation error: Access Denied
   Se  você está recebendo essa mensagem, a senha do ```OE_SUPERADMIN``` não foi definida, precisando ser alterada seguindo o seguinte caminho:
+  ```
   cd /etc/
+```
   E alterando o seguinte arquivo:
+  ```
   nano odoo-server.conf
+```
   Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para sair.
 
 
