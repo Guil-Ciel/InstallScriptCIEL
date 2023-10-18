@@ -32,7 +32,7 @@ sudo chmod +x create_role.sh
   Existem algumas configurações que podemos mudar, segue a lista: :<br/>
 ```OE_USER```. Será o nome de usuário para o usuário do sistema.<br/>
 ```GENERATE_RANDOM_PASSWORD```. Se isso estiver definido como True, o script gerará uma senha aleatória; se definido como False, a senha será configurada em ```OE_SUPERADMIN.``` O valor padrão é True, e o script gerará uma senha aleatória e segura.<br/>
-```OE_SUPERADMIN``` É a senha principal para esta instalação do Odoo. Caso queira modificar a senha. `Certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"`.<br/>
+```OE_SUPERADMIN``` É a senha principal para esta instalação do Odoo. Caso queira modificar a senha. `Certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"`. Essa senha pode ser alterada dentro do próprio odoo quando conseguirmos criar nossa primeira database.<br/>
 ```INSTALL_WKHTMLTOPDF``` Definido como False se você não quiser instalar o [Wkhmtltopdf](https://wkhtmltopdf.org/usage/wkhtmltopdf.txt); definido como True se desejar instalá-lo. Essa é uma ferramentas de linha de comando para renderizar HTML em PDF e vários formatos de imagem usando o Qt WebKit 
 ```OE_PORT``` É a porta em que o Odoo deve ser executado, por exemplo, 8069.<br/>
 ```OE_VERSION``` É a versão do Odoo a ser instalada, por exemplo, 16.0 para Odoo V16.<br/>
@@ -155,6 +155,18 @@ udo systemctl odoo-server restart
 sudo systemctl postgresql restart
 ```
 
+### 6. Criando a primeira database:
+
+Quando conseguirmos entrar na tela de criar nossa primeira database, veremos os seguintes campos:
+
+```Master Password```:
+```Database Name```:
+```Email```:
+```Password```:
+```Phone Number```:
+```Language```
+```Country```
+```Demo data```
 
 ## Onde devo hospedar o Odoo?
 Existem muitos excelentes serviços que oferecem boas opções de hospedagem. O script foi testado com alguns dos principais provedores, como [Google Cloud](https://cloud.google.com/), [Hetzner](https://www.hetzner.com/), [Amazon AWS](https://aws.amazon.com/) and [DigitalOcean](https://www.digitalocean.com/products/droplets/).
