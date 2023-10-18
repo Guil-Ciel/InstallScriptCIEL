@@ -8,14 +8,16 @@ Se você definir o parâmetro ```INSTALL_NGINX``` como ```True```, você também
 ## Processos de Instalação
 
 ##### 1. Baixe a pasta do script:
-```
+
 Já dentro da sua VM/Cloud/Terminal, copie e de enter:
+```
 git clone https://github.com/guilbezerra/InstallScriptCIEL.git
 ```
 
 ##### 2. Permissão de execução:
-```
+
 Comece dando a permissão de execução para os dois scripts que iremos usar:
+```
 sudo chmod +x odoo_install.sh
 ```
 ##### 2. Modifique os parâmetros:
@@ -34,13 +36,13 @@ sudo chmod +x odoo_install.sh
 ```INSTALL_NGINX``` e ´´´ENABLE_SSL´´´ devem ser definidos como True e o espaço reservado em ´´´ADMIN_EMAIL´´´ deve ser substituído por um endereço de e-mail válido para a instalação do certbot.<br/>
   _Ao ativar o SSL por meio do Let's Encrypt, você concorda com as seguintes políticas <br/>
 
-#### 3. Execute o script
+#### 3. Execute o script:
 ```
 sudo ./odoo_install.sh
-
+```
 Aguarde até o final, pressionando ENTER e digitando "Y" sempre que o script for pedindo. ao finalizar,
 você deve receber uma mensagem no terminal assim:
-```
+
 
 Done! The Odoo server is up and running. Specifications:<br/>
 Port: ```OE_PORT```.<br/>
