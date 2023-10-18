@@ -58,13 +58,20 @@ Stop Odoo service: sudo service odoo-server stop<br/>
 Restart Odoo service: sudo service odoo-server restart<br/>
 
 ##### 4. Inicie os serviços:
-```
-Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```odoo-server``` e ```postgresql```, digite:
-sudo service odoo-server start
-sudo service postgresql start
 
+Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```odoo-server``` e ```postgresql```, digite:
+```
+sudo service odoo-server start
+```
+
+```
+sudo service postgresql start
+```
 Entretanto, caso esteja fazendo esse processo em uma máquina linux, o comando pode alterar para systemctl, sendo assim:
+```
 sudo systemctl odoo-server start
+```
+```
 sudo systemctl postgresql start
 ```
 
