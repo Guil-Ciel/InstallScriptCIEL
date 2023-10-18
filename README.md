@@ -40,20 +40,21 @@ sudo ./odoo_install.sh
 
 Aguarde até o final, pressionando ENTER e digitando "Y" sempre que o script for pedindo. ao finalizar,
 você deve receber uma mensagem no terminal assim:
-
-Done! The Odoo server is up and running. Specifications:
-Port: ```OE_PORT```.
-User service: ```OE_USER```.
-Configuraton file location: /etc/odoo-server.conf
-Logfile location: /var/log/odoo
-User PostgreSQL: ```OE_USER```.
-Code location: ```OE_USER```.
-Addons folder: ```OE_USER```./odoo-server/addons/
-Password superadmin (database): "Sua senha colocada nos parâmetros" / Uma senha aleatória, exemplo: J4EzGDdGYvq8Eddz
-Start Odoo service: sudo service odoo-server start
-Stop Odoo service: sudo service odoo-server stop
-Restart Odoo service: sudo service odoo-server restart
 ```
+
+Done! The Odoo server is up and running. Specifications:<br/>
+Port: ```OE_PORT```.<br/>
+User service: ```OE_USER```.<br/>
+Configuraton file location: /etc/odoo-server.conf<br/>
+Logfile location: /var/log/odoo<br/>
+User PostgreSQL: ```OE_USER```.<br/>
+Code location: ```OE_USER```.<br/>
+Addons folder: ```OE_USER```/odoo-server/addons/<br/>
+Password superadmin (database): "Sua senha colocada nos parâmetros" / Uma senha aleatória, exemplo: J4EzGDdGYvq8Eddz<br/>
+Start Odoo service: sudo service odoo-server start<br/>
+Stop Odoo service: sudo service odoo-server stop<br/>
+Restart Odoo service: sudo service odoo-server restart<br/>
+
 ##### 4. Inicie os serviços:
 ```
 Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```odoo-server``` e ```postgresql```, digite:
