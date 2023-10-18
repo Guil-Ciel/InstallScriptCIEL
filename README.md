@@ -59,21 +59,21 @@ você deve receber uma mensagem no terminal assim:
 Done! The Odoo server is up and running. Specifications:<br/>
 Port: ```OE_PORT```.<br/>
 User service: ```OE_USER```.<br/>
-Configuraton file location: /etc/odoo-server.conf<br/>
+Configuraton file location: /etc/```OE_USER```.conf<br/>
 Logfile location: /var/log/odoo<br/>
 User PostgreSQL: ```OE_USER```.<br/>
 Code location: ```OE_USER```.<br/>
-Addons folder: ```OE_USER```/odoo-server/addons/<br/>
+Addons folder: ```OE_USER```/```OE_USER```-server/addons/<br/>
 Password superadmin (database): "Sua senha colocada nos parâmetros" / Uma senha aleatória, exemplo: J4EzGDdGYvq8Eddz<br/>
-Start Odoo service: sudo service odoo-server start<br/>
-Stop Odoo service: sudo service odoo-server stop<br/>
-Restart Odoo service: sudo service odoo-server restart<br/>
+Start Odoo service: sudo service ```OE_USER```-server start<br/>
+Stop Odoo service: sudo service ```OE_USER```server stop<br/>
+Restart Odoo service: sudo service ```OE_USER```-server restart<br/>
 
 ### 5. Inicie os serviços:
 
-Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```odoo-server``` e ```postgresql```, digite:
+Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```OE_USER```-server``` e ```postgresql```, digite:
 ```
-sudo service odoo-server start
+sudo service ```OE_USER```-server start
 ```
 
 ```
@@ -81,7 +81,7 @@ sudo service postgresql start
 ```
 Entretanto, caso esteja fazendo esse processo em uma máquina linux, o comando pode alterar para systemctl, sendo assim:
 ```
-sudo systemctl odoo-server start
+sudo systemctl ```OE_USER```-server start
 ```
 ```
 sudo systemctl postgresql start
@@ -111,11 +111,11 @@ nano OE_USER-server.conf
   Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para fechar. 
   Reinicie o serviço odoo e sua nova senha deve estar funcionando. 
 ```
-sudo service odoo-server restart
+sudo service ```OE_USER```-server restart
 ```
 Caso esteja usando systemctl:
 ```
-sudo systemctl odoo-server restart
+sudo systemctl ```OE_USER```-server restart
 ```
 
 ##### LEMBRANDO: certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"
@@ -177,12 +177,12 @@ Se o arquivo for executado corretamente, ele deve exibir a mensagem:
 Tendo assim criado a role com sucesso, podemos dar restart em ambos os serviços.
 
 ```
-sudo service odoo-server restart
+sudo service ```OE_USER```-server restart
 sudo service postgresql restart
 ```
 Caso esteja usando systemctl:
 ```
-udo systemctl odoo-server restart
+udo systemctl ```OE_USER```-server restart
 sudo systemctl postgresql restart
 ```
 
