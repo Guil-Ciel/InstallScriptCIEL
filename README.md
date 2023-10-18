@@ -36,7 +36,7 @@ sudo chmod +x odoo_install.sh
 ```INSTALL_NGINX``` e ´´´ENABLE_SSL´´´ devem ser definidos como True e o espaço reservado em ´´´ADMIN_EMAIL´´´ deve ser substituído por um endereço de e-mail válido para a instalação do certbot.<br/>
   _Ao ativar o SSL por meio do Let's Encrypt, você concorda com as seguintes políticas <br/>
 
-### 3. Execute o script:
+### 4. Execute o script:
 ```
 sudo ./odoo_install.sh
 ```
@@ -57,7 +57,7 @@ Start Odoo service: sudo service odoo-server start<br/>
 Stop Odoo service: sudo service odoo-server stop<br/>
 Restart Odoo service: sudo service odoo-server restart<br/>
 
-### 4. Inicie os serviços:
+### 5. Inicie os serviços:
 
 Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```odoo-server``` e ```postgresql```, digite:
 ```
@@ -77,7 +77,7 @@ sudo systemctl postgresql start
 
 Iniciando o serviços, seu odoo já estará rodando local/cloud e pode ser acessado por localhost:8069 ou "Seu ip do cloud":8069 (possivelmente o Cloud pode ter problemas com a porta, precisando ser liberada no firewall do mesmo)
 
-### 5. Troubleshoot:
+### 6. Troubleshoot:
 
 Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais comuns entre eles são:
 
