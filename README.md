@@ -168,7 +168,7 @@ Quando conseguirmos entrar na tela de criar nossa primeira database, veremos os 
 ```Phone Number```: Número de telefone (opcional)<br/>
 ```Language``` A linguagem do seu Odoo<br/>
 ```Country```Seleção de país<br/>
-```Demo data```? <br/>
+```Demo data```: Popula a base com dados de demonstração <br/>
 
 ## Onde devo hospedar o Odoo?
 Existem muitos excelentes serviços que oferecem boas opções de hospedagem. O script foi testado com alguns dos principais provedores, como [Google Cloud](https://cloud.google.com/), [Hetzner](https://www.hetzner.com/), [Amazon AWS](https://aws.amazon.com/) and [DigitalOcean](https://www.digitalocean.com/products/droplets/).
