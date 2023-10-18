@@ -9,44 +9,30 @@ Se você definir o parâmetro ```INSTALL_NGINX``` como ```True```, você também
 
 ##### 1. Baixe a pasta do script:
 ```
-Já dentro da sua VM/Cloud/Terminal, copie e de enter:
+  Já dentro da sua VM/Cloud/Terminal, copie e de enter:
 git clone https://github.com/guilbezerra/InstallScriptCIEL.git
 ```
 
 ##### 2. Permissão de execução:
 ```
-Comece dando a permissão de execução para os dois scripts que iremos usar:
+  Comece dando a permissão de execução para os dois scripts que iremos usar:
 sudo chmod +x odoo_install.sh
 sudo chmod +x create_role.sh
 ```
-##### 2. Modifique os parâmetros.
-Existem algumas configurações que podemos mudar, segue a lista: There are a few things you can configure, this is the most used list:<br/>
-```OE_USER``` will be the username for the system user.<br/>
-```GENERATE_RANDOM_PASSWORD``` if this is set to ```True``` the script will generate a random password, if set to ```False```we'll set the password that is configured in ```OE_SUPERADMIN```. By default the value is ```True``` and the script will generate a random and secure password.<br/>
-```INSTALL_WKHTMLTOPDF``` set to ```False``` if you do not want to install Wkhtmltopdf, if you want to install it you should set it to ```True```.<br/>
-```OE_PORT``` is the port where Odoo should run on, for example 8069.<br/>
-```OE_VERSION``` is the Odoo version to install, for example ```16.0``` for Odoo V16.<br/>
-```IS_ENTERPRISE``` will install the Enterprise version on top of ```16.0``` if you set it to ```True```, set it to ```False``` if you want the community version of Odoo 16.<br/>
-```OE_SUPERADMIN``` is the master password for this Odoo installation.<br/>
-```INSTALL_NGINX``` is set to ```False``` by default. Set this to ```True``` if you want to install Nginx.<br/>
-```WEBSITE_NAME``` Set the website name here for nginx configuration<br/>
-```ENABLE_SSL``` Set this to ```True``` to install [certbot](https://github.com/certbot/certbot) and configure nginx with https using a free Let's Encrypted certificate<br/>
-```ADMIN_EMAIL``` Email is needed to register for Let's Encrypt registration. Replace the default placeholder with an email of your organisation.<br/>
-```INSTALL_NGINX``` and ```ENABLE_SSL``` must be set to ```True``` and the placeholder in ```ADMIN_EMAIL``` must be replaced with a valid email address for certbot installation<br/>
-
-Existem algumas configurações que podemos mudar, segue a lista: :<br/>
-´´´OE_USER´´´ será o nome de usuário para o usuário do sistema.<br/>
-´´´GENERATE_RANDOM_PASSWORD´´´ se isso estiver definido como True, o script gerará uma senha aleatória; se definido como False, a senha será configurada em OE_SUPERADMIN. O valor padrão é True e o script gerará uma senha aleatória e segura.<br/>
-´´´INSTALL_WKHTMLTOPDF´´´ definido como False se você não quiser instalar o Wkhtmltopdf; definido como True se desejar instalá-lo.
-´´´OE_PORT´´´ é a porta em que o Odoo deve ser executado, por exemplo, 8069.<br/>
-´´´OE_VERSION´´´ é a versão do Odoo a ser instalada, por exemplo, 16.0 para Odoo V16.<br/>
-´´´IS_ENTERPRISE´´´ instalará a versão Enterprise sobre 16.0 se definido como True, ou a versão da comunidade do Odoo 16 se definido como False.<br/>
-´´´OE_SUPERADMIN´´´ é a senha principal para esta instalação do Odoo.<br/>
-´´´INSTALL_NGINX´´´ é definido como False por padrão. Defina como True se desejar instalar o Nginx.<br/>
-´´´WEBSITE_NAME´´´ Defina o nome do site aqui para a configuração do Nginx.<br/>
-´´´ENABLE_SSL´´´ Defina como True para instalar certbot e configurar o Nginx com https usando um certificado gratuito do Let's Encrypt.<br/>
-´´´ADMIN_EMAIL´´´ O e-mail é necessário para o registro do Let's Encrypt. Substitua o espaço reservado padrão por um e-mail da sua organização.<br/>
-´´´INSTALL_NGINX´´´ e ´´´ENABLE_SSL´´´ devem ser definidos como True e o espaço reservado em ´´´ADMIN_EMAI´´´L deve ser substituído por um endereço de e-mail válido para a instalação do certbot.<br/>
+##### 2. Modifique os parâmetros:
+  Existem algumas configurações que podemos mudar, segue a lista: :<br/>
+```OE_USER```. Será o nome de usuário para o usuário do sistema.<br/>
+```GENERATE_RANDOM_PASSWORD```. Se isso estiver definido como True, o script gerará uma senha aleatória; se definido como False, a senha será configurada em ```OE_SUPERADMIN.``` O valor padrão é True, e o script gerará uma senha aleatória e segura.<br/>
+```OE_SUPERADMIN``` É a senha principal para esta instalação do Odoo. Caso queira modificar a senha, certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura".<br/>
+```INSTALL_WKHTMLTOPDF``` Definido como False se você não quiser instalar o [Wkhmtltopdf](https://wkhtmltopdf.org/usage/wkhtmltopdf.txt); definido como True se desejar instalá-lo. Essa é uma ferramentas de linha de comando para renderizar HTML em PDF e vários formatos de imagem usando o Qt WebKit 
+```OE_PORT``` É a porta em que o Odoo deve ser executado, por exemplo, 8069.<br/>
+```OE_VERSION``` É a versão do Odoo a ser instalada, por exemplo, 16.0 para Odoo V16.<br/>
+```IS_ENTERPRISE``` Instalará a versão Enterprise sobre 16.0 se definido como True, ou a versão da comunidade do Odoo 16 se definido como False.<br/>
+```INSTALL_NGINX``` é definido como False por padrão. Defina como True se desejar instalar o Nginx.<br/>
+```WEBSITE_NAME```Defina o nome do site aqui para a configuração do Nginx.<br/>
+```ENABLE_SSL``` Defina como True para instalar [certbot](https://github.com/certbot/certbot) e configurar o Nginx com https usando um certificado gratuito do Let's Encrypt.<br/>
+```ADMIN_EMAIL``` O e-mail é necessário para o registro do Let's Encrypt. Substitua o espaço reservado padrão por um e-mail da sua organização.<br/>
+```INSTALL_NGINX``` e ´´´ENABLE_SSL´´´ devem ser definidos como True e o espaço reservado em ´´´ADMIN_EMAIL´´´ deve ser substituído por um endereço de e-mail válido para a instalação do certbot.<br/>
   _Ao ativar o SSL por meio do Let's Encrypt, você concorda com as seguintes políticas <br/>
 
 #### 3. Make the script executable
