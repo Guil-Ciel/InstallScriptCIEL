@@ -42,13 +42,13 @@ Aguarde até o final, pressionando ENTER e digitando "Y" sempre que o script for
 você deve receber uma mensagem no terminal assim:
 
 Done! The Odoo server is up and running. Specifications:
-Port: ```OE_PORT```
-User service: ```OE_USER```
+Port: ```OE_PORT```.
+User service: ```OE_USER```.
 Configuraton file location: /etc/odoo-server.conf
 Logfile location: /var/log/odoo
-User PostgreSQL: ```OE_USER```
-Code location: ```OE_USER```
-Addons folder: ```OE_USER```/odoo-server/addons/
+User PostgreSQL: ```OE_USER```.
+Code location: ```OE_USER```.
+Addons folder: ```OE_USER```./odoo-server/addons/
 Password superadmin (database): "Sua senha colocada nos parâmetros" / Uma senha aleatória, exemplo: J4EzGDdGYvq8Eddz
 Start Odoo service: sudo service odoo-server start
 Stop Odoo service: sudo service odoo-server stop
