@@ -159,14 +159,16 @@ sudo systemctl postgresql restart
 
 Quando conseguirmos entrar na tela de criar nossa primeira database, veremos os seguintes campos:
 
-```Master Password```:
-```Database Name```:
-```Email```:
-```Password```:
-```Phone Number```:
-```Language```
-```Country```
-```Demo data```
+![image](https://github.com/guilbezerra/InstallScriptCIEL/assets/146212857/61cb968d-30a3-488a-9267-734492fa03e6)
+
+```Master Password```: É a mesma senha de admin que colocamos em ```OE_SUPERADMIN``` e servirá para criar a database <br/>
+```Database Name```: O nome que nossa database terá<br/>
+```Email```: Mesmo com esse nome, não precisa ser um, esse será nosso usuário de login. Podendo ser por exemplo: Admin <br/>
+```Password```: A senha que usaremos para logar na conta<br/>
+```Phone Number```: Número de telefone (opcional)<br/>
+```Language``` A linguagem do seu Odoo<br/>
+```Country```Seleção de país<br/>
+```Demo data```? <br/>
 
 ## Onde devo hospedar o Odoo?
 Existem muitos excelentes serviços que oferecem boas opções de hospedagem. O script foi testado com alguns dos principais provedores, como [Google Cloud](https://cloud.google.com/), [Hetzner](https://www.hetzner.com/), [Amazon AWS](https://aws.amazon.com/) and [DigitalOcean](https://www.digitalocean.com/products/droplets/).
