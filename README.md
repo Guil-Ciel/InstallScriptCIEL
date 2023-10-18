@@ -94,7 +94,8 @@ Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais 
 ```
 nano odoo-server.conf
 ```
-  Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para sair. Reinicie o serviço odoo e sua nova senha deve estar funcionando. LEMBRANDO: certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"
+  Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para fechar. 
+  Reinicie o serviço odoo e sua nova senha deve estar funcionando. LEMBRANDO: certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"
 ```
 sudo service odoo-server restart
 ```
