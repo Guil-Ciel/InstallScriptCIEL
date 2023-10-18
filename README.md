@@ -37,6 +37,7 @@ sudo chmod +x odoo_install.sh
 #### 3. Execute o script
 ```
 sudo ./odoo_install.sh
+```
 Aguarde até o final, pressionando enter e digitando "Y" sempre que o script for pedindo. ao finalizar, você deve receber uma mensagem no terminal assim:
 Done! The Odoo server is up and running. Specifications:
 Port: ```OE_PORT```
