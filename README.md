@@ -16,6 +16,11 @@ git clone https://github.com/guilbezerra/InstallScriptCIEL.git
 
 ### 2. Permissão de execução:
 
+Entre na pasta que acabamos de clonar com:
+```
+cd InstallScriptCIEL/
+```
+
 Comece dando a permissão de execução para o script principal e mais um que posteriormente podemos vir a usar:
 ```
 sudo chmod +x odoo_install.sh
