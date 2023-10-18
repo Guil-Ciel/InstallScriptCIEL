@@ -91,7 +91,12 @@ Iniciando o serviços, seu odoo já estará rodando local/cloud e pode ser acess
 
 ### 6. Troubleshoot:
 
-Ao finalizar a instalação, podemos nós deparar com alguns problemas. Os mais comuns entre eles são:
+Ao finalizar a instalação, podemos nós deparar com alguns problemas.
+
+Para podermos modificar alguns desse arquivos, primeiro precissamos estar no root, com o seguinte comando:
+```
+sudo -i
+```
 
 #### 1 - Database creation error: Access Denied
   Se  você está recebendo essa mensagem, a senha do ```OE_SUPERADMIN``` não foi definida, precisando ser alterada seguindo o seguinte caminho:
