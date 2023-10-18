@@ -29,6 +29,10 @@ sudo chmod +x odoo_install.sh
 sudo chmod +x create_role.sh
 ```
 ### 3. Modifique os parâmetros:
+Usando
+```
+nano odoo_install.sh
+```
   Existem algumas configurações que podemos mudar, segue a lista: :<br/>
 ```OE_USER```. Será o nome de usuário para o usuário do sistema.<br/>
 ```GENERATE_RANDOM_PASSWORD```. Se isso estiver definido como True, o script gerará uma senha aleatória; se definido como False, a senha será configurada em ```OE_SUPERADMIN.``` O valor padrão é True, e o script gerará uma senha aleatória e segura.<br/>
