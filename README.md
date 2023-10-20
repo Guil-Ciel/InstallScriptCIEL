@@ -142,12 +142,12 @@ sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/14/main/postgresql.conf
 ##### 2.3 - PostgreSQL está com as configurações de autentificação errada:
 Para corrigir, rode os comandos:
 ```
-sudo sed -i 's/local   all             all                                     peer/local   all             all                                     trust/' /etc/postgresql/14/main/pg_hba.conf
+sudo sed -i 's/local   all             postgres                                peer/local   all             all                                     trust/' /etc/postgresql/14/main/pg_hba.conf
 ```
 
 
 ```
-sudo sed -i 's/local   all             postgresql                                peer/local   all             postgresql                                trust/' /etc/postgresql/14/main/pg_hba.conf
+sudo sed -i 's/local   all             all                                peer/local   all             all                                trust/' /etc/postgresql/14/main/pg_hba.conf
 ```
 
 
