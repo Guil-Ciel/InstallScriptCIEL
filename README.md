@@ -34,7 +34,7 @@ Usando
 nano odoo_install.sh
 ```
   Existem algumas configurações que podemos mudar, segue a lista: :<br/>
-```OE_USER```. Será o nome de usuário para o usuário do sistema.<br/>
+```OE_USER```. Será o nome de usuário para o usuário do sistema. Seguiremos com o padrão: ODOO<br/>
 ```GENERATE_RANDOM_PASSWORD```. Se isso estiver definido como True, o script gerará uma senha aleatória; se definido como False, a senha será configurada em ```OE_SUPERADMIN.``` O valor padrão é True, e o script gerará uma senha aleatória e segura.<br/>
 ```OE_SUPERADMIN``` É a senha principal para esta instalação do Odoo. Caso queira modificar a senha. `Certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"`. Essa senha pode ser alterada dentro do próprio odoo quando conseguirmos criar nossa primeira database.<br/>
 ```INSTALL_WKHTMLTOPDF``` Definido como False se você não quiser instalar o [Wkhmtltopdf](https://wkhtmltopdf.org/usage/wkhtmltopdf.txt); definido como True se desejar instalá-lo. Essa é uma ferramentas de linha de comando para renderizar HTML em PDF e vários formatos de imagem usando o Qt WebKit 
@@ -72,9 +72,9 @@ Restart Odoo service: sudo service ```OE_USER```-server restart<br/>
 ### 5. Inicie os serviços:
 
 Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```OE_USER```-server``` e ```postgresql```, digite:
-##### (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão é "odoo")
+##### (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão que estamos seugindo é "odoo")
 ```
-sudo service `OE_USER`-server start
+sudo service odoo-server start
 ```
 
 ```
@@ -82,7 +82,7 @@ sudo service postgresql start
 ```
 Entretanto, caso esteja fazendo esse processo em uma máquina linux, o comando pode alterar para systemctl, sendo assim:
 ```
-sudo systemctl `OE_USER`-server start
+sudo systemctl odoo-server start
 ```
 ```
 sudo systemctl postgresql start
@@ -107,16 +107,16 @@ sudo -i
   E alterando o seguinte arquivo:
   
 ```
-nano OE_USER-server.conf
+nano odoo-server.conf
 ```
   Mudando a linha ```admin_passwd =``` e apertando CTRL+X para sair do arquivo, "Y" para confirmar a mudança que fizemos na senha e "Enter" para fechar. 
   Reinicie o serviço odoo e sua nova senha deve estar funcionando. 
 ```
-sudo service`OE_USER-server restart
+sudo service odoo-server restart
 ```
 Caso esteja usando systemctl:
 ```
-sudo systemctl OE_USER-server restart
+sudo systemctl odoo-server restart
 ```
 
 ##### LEMBRANDO: certifique-se de usar letras maiúsculas e minúsculas, números e caracteres especiais, ou ele continuará gerando uma senha aleatória por ser mais "segura"
