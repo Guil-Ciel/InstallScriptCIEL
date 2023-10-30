@@ -72,7 +72,7 @@ Restart Odoo service: sudo service ```OE_USER```-server restart<br/>
 ### 5. Inicie os serviços:
 
 Como está instalação foi criada em WSL usando o Ubuntu disponivel na Microsoft Store, para iniciar os serviços ```OE_USER```-server``` e ```postgresql```, digite:
-##### (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão que estamos seugindo é "odoo")
+##### (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão que estamos seguindo é "odoo")
 ```
 sudo service odoo-server start
 ```
