@@ -31,7 +31,7 @@ sudo chmod +x create_role.sh
 ### 3. Modifique os parâmetros:
 Usando
 ```
-nano odoo_install.sh
+sudo nano odoo_install.sh
 ```
   Existem algumas configurações que podemos mudar, segue a lista: :<br/>
 ```OE_USER```. Será o nome de usuário para o usuário do sistema. Seguiremos com o padrão: ODOO<br/>
