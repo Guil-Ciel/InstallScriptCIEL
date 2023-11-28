@@ -121,7 +121,7 @@ if [ $INSTALL_WKHTMLTOPDF = "True" ]; then
 
   if [[ $(lsb_release -r -s) == "22.04" ]]; then
     # Ubuntu 22.04 LTS
-    sudo apt install wkhtmltopdf -y
+    sudo gdebi --n `basename $_url`
   else
       # For older versions of Ubuntu
     sudo gdebi --n `basename $_url`
