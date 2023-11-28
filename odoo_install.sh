@@ -34,7 +34,7 @@ INSTALL_NGINX="False"
 # Set the superadmin password - if GENERATE_RANDOM_PASSWORD is set to "True" we will automatically generate a random password, otherwise we use this one
 OE_SUPERADMIN="admin"
 # Set to "True" to generate a random password, "False" to use the variable in OE_SUPERADMIN
-GENERATE_RANDOM_PASSWORD="True"
+GENERATE_RANDOM_PASSWORD="False"
 OE_CONFIG="${OE_USER}-server"
 # Set the website name
 WEBSITE_NAME="_"
@@ -121,7 +121,18 @@ if [ $INSTALL_WKHTMLTOPDF = "True" ]; then
 
   if [[ $(lsb_release -r -s) == "22.04" ]]; then
     # Ubuntu 22.04 LTS
-    sudo apt install wkhtmltopdf -y
+    echo -e "\n--- Installing Libss1.1 --"
+    sudo wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+    sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
+    echo -e "\n--- Installing WKHTMLTOPDF 0.12.5 --"z
+    sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.focal_amd64.deb
+    sudo apt install ./wkhtmltox_0.12.5-1.focal_amd64.deb
+
+    echo -e "\n--- WKHTMLTOPDF VERSION INSTALLED--"
+    sudo wkhtmltopdf --version
+
+    
   else
       # For older versions of Ubuntu
     sudo gdebi --n `basename $_url`
