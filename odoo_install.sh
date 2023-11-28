@@ -125,9 +125,13 @@ if [ $INSTALL_WKHTMLTOPDF = "True" ]; then
     sudo wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
     sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 
-    echo -e "\n--- Installing WKHTMLTOPDF 0.12.5 --"
+    echo -e "\n--- Installing WKHTMLTOPDF 0.12.5 --"z
     sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.focal_amd64.deb
     sudo apt install ./wkhtmltox_0.12.5-1.focal_amd64.deb
+
+    echo -e "\n--- WKHTMLTOPDF VERSION INSTALLED--"
+    sudo wkhtmltopdf --version
+
     
   else
       # For older versions of Ubuntu
