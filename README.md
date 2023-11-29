@@ -7,11 +7,11 @@ Se você definir o parâmetro ```INSTALL_NGINX``` como ```True```, você também
 
 ## Processos de Instalação
 
-### 1. Baixe a pasta do script:
+### 1. Baixe a pasta do script Odoo 14.0:
 
 Já dentro da sua VM/Cloud/Terminal, copie e de enter:
 ```
-git clone https://github.com/guilbezerra/InstallScriptCIEL.git
+git clone -b 14.0 https://github.com/guilbezerra/InstallScriptCIEL.git
 ```
 
 ### 2. Permissão de execução:
