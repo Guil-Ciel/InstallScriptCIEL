@@ -30,11 +30,13 @@ Aguarde a finalização do download e feche o CMD.
 
 ### 3. Baixe o Ubuntu na Microsoft Store:
 
-Para esta instalação, utilizaremos a versão 20.04.6 LTS do Ubuntu.
+Acesse a **Microsoft Store** pela barra de pesquisa do Windows:
+![image](https://github.com/Guil-Ciel/InstallScriptCIEL/assets/146212857/f7139de9-bfcc-4e43-878b-39ed52a54cfe)
 
-```
-https://www.microsoft.com/store/productId/9MTTCL66CPXJ?ocid=pdpshare
-```
+E pesquise por Ubuntu na barra de pesquisa da loja.
+Para esta instalação, utilizaremos a versão 20.04.6 LTS do Ubuntu.
+![image](https://github.com/Guil-Ciel/InstallScriptCIEL/assets/146212857/d8393dfb-8b8d-4ff7-a3ec-39de2fc1514c)
+
 
 ### 4. Definindo seu úsuario.
 
