@@ -85,10 +85,10 @@ sudo chmod +x create_role.sh
 ### 3. Parâmetros:
 Para praticidade, nesta documentação, mantenha as seguintes informações sobre esses parâmetros que seguiremos:
 
-**OE_USER**: odoo
-**OE_SUPERADMIN:** admin
-**OE_VERSION:** 16.0
-**OE_PORT**: 8069
+**OE_USER**: odoo <br/>
+**OE_SUPERADMIN:** admin <br/>
+**OE_VERSION:** 16.0 <br/> 
+**OE_PORT**: 8069 <br/>
 
 Caso deseje editar algum desses parâmetros, use o comando:
 
