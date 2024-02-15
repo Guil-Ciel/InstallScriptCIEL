@@ -151,7 +151,7 @@ Restart Odoo service: sudo service ```OE_USER```-server restart<br/>
 ### 5. Inicie os serviços (quando necessario):
 Por padrão, o script já inicia tanto o odoo quanto o postgresql, entretanto, caso necessario você pode executa-lo da seguinte forma:
 
-Para iniciar os serviços ```OE_USER```-server``` e ```postgresql```, digite:
+Para iniciar os serviços ```OE_USER```-server e ```postgresql```, digite:
 ##### (o nome ```OE_USER``` será igual o que você colocou no parâmetro do passo #3, na qual o padrão que estamos seguindo é "odoo")
 ```
 sudo service odoo-server start
