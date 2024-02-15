@@ -179,7 +179,7 @@ odoo/custom/addons/
 E coloque seus módulos personalizados dentro da mesma.
 
 
-**LEMBRETE IMPORTANTE:**
+## **LEMBRETE IMPORTANTE:**
 
 Sempre que adicionar/remover/atualizar um módulo novo dentro de qualquer pasta do odoo, lembre de reiniciar o serviço com o comando:
 ```
