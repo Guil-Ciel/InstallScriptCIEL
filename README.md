@@ -52,10 +52,12 @@ Concluídos os quatro passos anteriores, podemos prosseguir com a instalação d
 ### 1 Definir seu acesso ao git:
 
 Para conseguir clonar do git, define seu perfil com os seguintes comandos:
-
+```
 git config --global user.name "Seu nome de úsuario"
+```
+```
 git config --global user.email "SeuEmail@SeuDominio.com"
-
+```
 
 ### 1.1 Baixe a pasta do script:
 
