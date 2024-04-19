@@ -167,7 +167,7 @@ Iniciando o serviços, seu odoo já estará rodando local/cloud e pode ser acess
 
 Para podermos enviar pastas customizadas para fazer nossos testes na base, precisamos dar permissão de acesso a pasta **custom** dentro do odoo. Caso tenha seguido com o **OE_USER** padrão (odoo), digite no terminal:
 ```
-sudo chmod 777 /odoo/custom/addons/
+sudo chmod -R 777 /odoo/
 ```
 Para enviar a pasta, você pode acessar essas mesmas pastas pelo Windows Explorer, que agora terá um símbolo do Linux disponível para acesso:
 ![image](https://github.com/Guil-Ciel/InstallScriptCIEL/assets/146212857/43062a6a-0be0-468b-826f-448844ff727a)
